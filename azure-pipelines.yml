@@ -29,7 +29,7 @@ jobs:
   steps:
   - task: Maven@3
     inputs:
-      mavenPomFile: '$(project_name)/poms/pom.xml' 
+      mavenPomFile: 'poms/pom.xml' 
       goals: 'deploy'
       options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -U -DaltDeploymentRepository=release::default::http://localhost:8081/repository/release   -pl jobs/process_mr/$(job_name)_$(job_version) -am '
       publishJUnitResults: false 
