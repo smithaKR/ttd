@@ -22,7 +22,7 @@ jobs:
     clean: true
 
 - job: build
-  pool: 'Talend CommandLine'
+  pool: 'Default'
   dependsOn: checkout
   displayName: 'Job Build & Publish to ACR'
   continueOnError: false
