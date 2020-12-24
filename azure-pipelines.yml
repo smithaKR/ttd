@@ -38,6 +38,6 @@ jobs:
       jdkDirectory: 'C:/Program Files/RedHat/java-1.8.0-openjdk-1.8.0.262-3/bin/java'
       mavenVersionOption: path
       mavenDirectory: 'C:\apache-maven-3.6.3-bin\apache-maven-3.6.3'
-     mavenOptions: '-Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/ -Xmx3096m -Xmx1024m'
+      mavenOptions: '-Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/ -Xmx3096m -Xmx1024m'
       sonarQubeRunAnalysis: false 
       
