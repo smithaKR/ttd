@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="how_to_post_message_ActiveMQ-feature">
+<feature name="how_to_post_message_ActiveMQ-feature" version="0.1.0">
+<feature>camel-spring</feature>
+<feature>camel-core</feature>
+<bundle>mvn:org.example.local_project.route/how_to_post_message_ActiveMQ/0.1.0</bundle>
+<config name="how_to_post_message_ActiveMQ.talendcontext.Default" override="true">
+</config>
+</feature>
+</features>
