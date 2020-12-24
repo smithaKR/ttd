@@ -9,7 +9,7 @@ variables:
   job_version: 0.1 
   commandline_path: C:/studio # CHANGE WITH YOUR OWN PATH
   
-  JAVA_HOME_8_X64: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64
+  JAVA_HOME_8_X64: C:\Program Files\RedHat\java-1.8.0-openjdk-1.8.0.262-3
   
 jobs:
 
