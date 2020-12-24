@@ -9,8 +9,7 @@
   <name>LOCAL_PROJECT Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
-    <module>code/routines</module>
-    <module>code/beans</module>
+  
     <module>jobs/process/demo/onboardingdemojob_0.1</module>
     
   </modules>
