@@ -1,22 +1,42 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+# Basic Azure Pipeline for building job and push to Azure ACR
 
 trigger:
-- main
+- master
 
-pool:
-  vmImage: 'ubuntu-latest'
+variables:
+  project_name: ttd
+  job_name: onboardingdemojob
+  job_version: 0.1 
+  commandline_path: C:/studio # CHANGE WITH YOUR OWN PATH
+  
+  JAVA_HOME_8_X64: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64
+  
+jobs:
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'poms/pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-   # publishJUnitResults: true
-   # testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+- job: checkout
+  pool: 'Talend CommandLine' # ADAPT IF YOU HAVE A AGENT POOL NAME
+  displayName: 'Git Checkout'
+  continueOnError: false
+  steps:
+  - checkout: self
+    clean: true
+
+- job: build
+  pool: 'Talend CommandLine'
+  dependsOn: checkout
+  displayName: 'Job Build & Publish to ACR'
+  continueOnError: false
+  steps:
+  - task: Maven@3
+    inputs:
+      mavenPomFile: '$(project_name)/poms/pom.xml' 
+      goals: 'deploy'
+      options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -U -DaltDeploymentRepository=release::default::http://localhost:8081/repository/release   -pl jobs/process_mr/$(job_name)_$(job_version) -am '
+      publishJUnitResults: false 
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.8'
+      jdkDirectory: '/usr/bin/java'
+      mavenVersionOption: path
+      mavenDirectory: '/usr/local/src/apache-maven'
+      mavenOptions: '-Dgeneration.type=local -Dproduct.path=$(commandline_path) -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/ -Xmx3096m -Xmx1024m'
+      sonarQubeRunAnalysis: false 
