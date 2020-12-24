@@ -14,7 +14,7 @@ variables:
 jobs:
 
 - job: checkout
-  pool: 'Talend CommandLine' # ADAPT IF YOU HAVE A AGENT POOL NAME
+  pool: 'default' # ADAPT IF YOU HAVE A AGENT POOL NAME
   displayName: 'Git Checkout'
   continueOnError: false
   steps:
