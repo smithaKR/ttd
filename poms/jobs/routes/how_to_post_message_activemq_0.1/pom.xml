@@ -18,7 +18,7 @@
     <module>pom-feature.xml</module>
   </modules>
   <dependencies>
-    <dependency>
+   <!-- <dependency>
       <groupId>org.talend.libraries</groupId>
       <artifactId>camel-core-2.24.2</artifactId>
       <version>6.0.0</version>
@@ -82,7 +82,7 @@
       <groupId>org.example.local_project.bean</groupId>
       <artifactId>beans</artifactId>
       <version>7.3.1</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
   <build />
   <profiles>
