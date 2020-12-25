@@ -72,11 +72,11 @@
       <artifactId>slf4j-api</artifactId>
       <version>1.7.25</version>
     </dependency>
-    <dependency>
+   <!-- <dependency>
       <groupId>org.example.local_project.code</groupId>
       <artifactId>routines</artifactId>
       <version>7.3.1</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
   <build>
     <finalName>${talend.job.finalName}</finalName>
@@ -163,10 +163,10 @@
       <properties>
         <assemblies.dir>${basedir}/src/main/assemblies/</assemblies.dir>
         <pigudfpom.dir>${parentpom.dir}code/pigudf/</pigudfpom.dir>
-        <routinescode.dir>${parentpom.dir}code/routines/src/main/</routinescode.dir>
+       <!-- <routinescode.dir>${parentpom.dir}code/routines/src/main/</routinescode.dir>-->
         <parentpom.dir>${project.parent.relativePath}</parentpom.dir>
         <templates.dir>${basedir}/src/main/templates/</templates.dir>
-        <routinespom.dir>${parentpom.dir}code/routines/</routinespom.dir>
+        <!--<routinespom.dir>${parentpom.dir}code/routines/</routinespom.dir>-->
         <pigudfcode.dir>${parentpom.dir}code/pigudf/src/main/</pigudfcode.dir>
         <joblet.dir>${parentpom.dir}jobs/</joblet.dir>
         <poms.dir>${basedir}</poms.dir>
@@ -202,7 +202,7 @@
       </activation>
       <properties>
         <jobs.binaries.includes.set>${project.groupId}:*</jobs.binaries.includes.set>
-        <routines.binaries.includes.set>${talend.routine.groupid}:*</routines.binaries.includes.set>
+       <!-- <routines.binaries.includes.set>${talend.routine.groupid}:*</routines.binaries.includes.set>-->
       </properties>
     </profile>
     <profile>
