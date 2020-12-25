@@ -9,9 +9,9 @@
   <name>LOCAL_PROJECT Codes Master</name>
   <url>http://www.talend.org/</url>
   <modules>
-  
+   <module> jobs/routes/how_to_post_message_activemq_0.1/</module>
     <module>jobs/process/demo/onboardingdemojob_0.1</module>
-    
+  
   </modules>
   <properties>
     <talend.project.name>LOCAL_PROJECT</talend.project.name>
