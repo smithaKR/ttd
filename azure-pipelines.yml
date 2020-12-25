@@ -31,7 +31,7 @@ jobs:
     inputs:
       mavenPomFile: 'poms/pom.xml' 
       goals: 'package'
-      options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -X -U -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/   -pl jobs/process/demo/$(job_name)_$(job_version) -amd -Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/'
+      options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -X -U -Dproject.distributionManagement.repository.url=http://prdlnxtara:8081/repository/snapshots/ -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/   -pl jobs/process/demo/$(job_name)_$(job_version) -amd -Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/'
       publishJUnitResults: false 
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
