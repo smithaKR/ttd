@@ -42,16 +42,16 @@
     <talend.job.type>Standard</talend.job.type>
   </properties>
   <dependencies>
-    <dependency>
+    <!--   <dependency>
       <groupId>org.talend.libraries</groupId>
       <artifactId>crypto-utils</artifactId>
       <version>6.0.0-SNAPSHOT</version>
     </dependency>
-   <!-- <dependency>
+ <dependency>
       <groupId>org.dom4j</groupId>
       <artifactId>dom4j</artifactId>
       <version>2.1.1</version>
-    </dependency>-->
+    </dependency>
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -72,7 +72,7 @@
       <artifactId>slf4j-api</artifactId>
       <version>1.7.25</version>
     </dependency>
-   <!-- <dependency>
+    <dependency>
       <groupId>org.example.local_project.code</groupId>
       <artifactId>routines</artifactId>
       <version>7.3.1</version>
