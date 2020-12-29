@@ -31,7 +31,7 @@ jobs:
     inputs:
       mavenPomFile: 'poms/pom.xml' 
       goals: 'package'
-      options: '--settings C:/studio/configuration/maven_user_settings.xml   -Dproduct.path=C:/studio -am '
+      options: '--settings C:/studio/configuration/maven_user_settings.xml   -Dproduct.path=C:/studio -pl jobs\process\demo\onboardingdemojob_0.1 -am '
       publishJUnitResults: false 
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
