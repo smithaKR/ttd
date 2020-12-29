@@ -14,12 +14,12 @@ variables:
 jobs:
 
 - job: checkout
- # pool: 'default' # ADAPT IF YOU HAVE A AGENT POOL NAME
-  #displayName: 'Git Checkout'
-  #continueOnError: false
-  #steps:
-  #- checkout: self
-   # clean: true
+  pool: 'default' # ADAPT IF YOU HAVE A AGENT POOL NAME
+  displayName: 'Git Checkout'
+  continueOnError: false
+  steps:
+   checkout: self
+   clean: true
 
 - job: build
   pool: 'Default'
