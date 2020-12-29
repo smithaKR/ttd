@@ -14,12 +14,12 @@ variables:
 jobs:
 
 - job: checkout
-  pool: 'default' # ADAPT IF YOU HAVE A AGENT POOL NAME
-  displayName: 'Git Checkout'
-  continueOnError: false
-  steps:
-  - checkout: self
-    clean: true
+ # pool: 'default' # ADAPT IF YOU HAVE A AGENT POOL NAME
+  #displayName: 'Git Checkout'
+  #continueOnError: false
+  #steps:
+  #- checkout: self
+   # clean: true
 
 - job: build
   pool: 'Default'
@@ -31,7 +31,7 @@ jobs:
     inputs:
       mavenPomFile: 'poms/pom.xml' 
       goals: 'package'
-      options: '--settings C:/studio/configuration/maven_user_settings.xml   -Dproduct.path=C:/studio -pl jobs\process\demo\onboardingdemojob_0.1 -am '
+      options: 'C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\template_123\MASTER_DATA_MANAGEMENT/poms/pom.xml --settings C:/CICD/settings.xml "-Dproduct.path=C:/studio" -pl jobs/routes/mdm/location/r0301_on_mdm_location_file_2_mq_location_jms_mock_0.3 -am  package'
       publishJUnitResults: false 
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
