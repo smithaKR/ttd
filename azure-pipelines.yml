@@ -18,8 +18,8 @@ jobs:
   displayName: 'Git Checkout'
   continueOnError: false
   steps:
-   checkout: self
-   clean: true
+  - checkout: self
+    clean: true
 
 - job: build
   pool: 'Default'
