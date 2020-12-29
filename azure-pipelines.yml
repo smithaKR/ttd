@@ -30,14 +30,14 @@ jobs:
   - task: Maven@3
     inputs:
       mavenPomFile: 'poms/pom.xml' 
-      goals: 'install'
-      options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -X -U -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.repository.url=http://prdlnxtara:8081/repository/snapshots/ -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/   -pl jobs/process/demo/$(job_name)_$(job_version) -amd -Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/'
+      goals: 'package'
+      options: '--settings C:/studio/configuration/maven_user_settings.xml -X -U -Dproduct.path=C:/studio -Dproject.distributionManagement.repository.url=http://prdlnxtara:8081/repository/snapshots/ -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/   -pl jobs/process/demo/$(job_name)_$(job_version) -amd -Dgeneration.type=local -Dproduct.path=C:/studio -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/'
       publishJUnitResults: false 
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
       jdkDirectory: 'C:/Program Files/RedHat/java-1.8.0-openjdk-1.8.0.262-3/bin/java'
       mavenVersionOption: path
       mavenDirectory: 'C:\apache-maven-3.6.3-bin\apache-maven-3.6.3'
-      mavenOptions: '-Dgeneration.type=local -Dproduct.path=$(commandline_path) -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/ -Xmx3096m -Xmx1024m'
+      mavenOptions: '-Dgeneration.type=local -Dproduct.path=C:/studio -Dproject.distributionManagement.snapshotRepository.id=snapshots -Dproject.distributionManagement.snapshotRepository.id=snapshots -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/ -Xmx3096m -Xmx1024m'
       sonarQubeRunAnalysis: false 
       
