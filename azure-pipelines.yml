@@ -31,7 +31,7 @@ jobs:
     inputs:
       mavenPomFile: 'poms/pom.xml' 
       goals: 'package'
-      options: 'C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\template_123\MASTER_DATA_MANAGEMENT\poms\pom.xml --settings C:/CICD/settings.xml -DCommandline.skip=true -Dproduct.path=C:/studio -pl C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\template_123\MASTER_DATA_MANAGEMENT\poms\jobs\routes\mdm\location\r0301_on_mdm_location_file_2_mq_location_jms_mock_0.3 -am  package'
+      options: '--settings $(commandline_path)/configuration/maven_user_settings.xml -DCommandline.skip=true -U -DaltDeploymentRepository=snapshots::default::http://prdlnxtara:8081/repository/snapshots/  -e -pl jobs/process/demo/$(job_name)_$(job_version) -am '
       publishJUnitResults: false 
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.8'
